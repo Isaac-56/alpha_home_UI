@@ -36,3 +36,10 @@ body{transition:background-color .3s,color .3s}.nav{background:var(--nav-surface
 /* Keep the phone booking artwork balanced with its text label. */
 .call-art>b{font-size:clamp(34px,3.6vw,48px);letter-spacing:-2px;white-space:nowrap}
 @media(max-width:680px){.call-art>b{font-size:54px}}
+
+/* Phone service is announced, with a notice instead of dialing. */
+[data-call-soon]{background:transparent;padding:0;text-align:inherit;color:inherit}
+.nav-call[data-call-soon]{color:var(--accent)}.hero-cta [data-call-soon]{color:var(--hero-muted)}
+.feature-foot[data-call-soon]{width:100%;padding-top:19px}.footer-top>[data-call-soon]{font-size:11px}
+.call-store[data-call-soon]{padding:14px 19px;color:#15210e}
+@media(max-width:680px){.footer-top>[data-call-soon]{margin-left:auto}.call-store[data-call-soon]{padding:14px 12px}}

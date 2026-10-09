@@ -112,6 +112,15 @@
   reducedMotion.addEventListener('change', resetPointer);
   finePointer.addEventListener('change', resetPointer);
   const dialog = document.querySelector('#download-dialog');
+  function showAvailability(title, message) {
+    document.querySelector('#dialog-title').textContent = title;
+    document.querySelector('#dialog-message').textContent = message;
+    if (typeof dialog.showModal === 'function') dialog.showModal();
+    else window.alert(message);
+  }
+  document.querySelectorAll('[data-call-soon]').forEach(button => button.addEventListener('click', () => {
+    showAvailability('Coming soon', 'Phone booking and phone support are coming soon. This service is not available yet. We’ll share the contact details here when it launches.');
+  }));
   document.querySelectorAll('[data-download]').forEach(button => button.addEventListener('click', () => {
     const app = button.dataset.download;
     const url = window.ALPHA_CONFIG?.[app]?.[button.dataset.store];
@@ -123,12 +132,9 @@
       } catch (_) { /* Invalid config uses the availability message below. */ }
     }
     const name = app === 'driver' ? 'Alpha Plus' : 'Alpha Ride';
-    document.querySelector('#dialog-title').textContent = name;
-    document.querySelector('#dialog-message').textContent = `The ${button.dataset.store === 'ios' ? 'App Store' : 'Google Play'} download link for ${name} will be added when it is available. Call 8888 for ${app === 'driver' ? 'driver registration information' : 'ride booking and app availability'}.`;
-    if (typeof dialog.showModal === 'function') dialog.showModal();
-    else window.location.href = 'tel:8888';
+    showAvailability(name, `The ${button.dataset.store === 'ios' ? 'App Store' : 'Google Play'} download link for ${name} will be added when the app is released. Phone booking and phone support are also coming soon.`);
   }));
-  document.querySelector('.dialog-close').addEventListener('click', () => dialog.close());
+  document.querySelectorAll('.dialog-close, [data-dialog-close]').forEach(button => button.addEventListener('click', () => dialog.close()));
   dialog.addEventListener('click', e => { if (e.target === dialog) { const b = dialog.getBoundingClientRect(); if (e.clientX < b.left || e.clientX > b.right || e.clientY < b.top || e.clientY > b.bottom) dialog.close(); } });
   document.querySelector('#year').textContent = String(new Date().getFullYear());
 })();
