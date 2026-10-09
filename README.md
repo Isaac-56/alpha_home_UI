@@ -37,10 +37,16 @@ Desktop browser checks verified the rendered hero, ride artwork, passenger/drive
 
 ## Visual refresh
 
-Light is the default on a first visit. A moon button switches to dark; a sun button switches back. The chosen theme is remembered. The header, hero, driver section and footer follow the theme. Mouse users get a soft cursor trail, pointer-position card highlights and phone parallax. Touch and reduced-motion users do not receive these pointer effects.
+Light is the default on a first visit. A moon button switches to dark; a sun button switches back. The chosen theme is remembered. The header, hero, driver section and footer follow the theme. Mouse users get a soft cursor shadow, pointer-position card highlights and phone parallax. Touch and reduced-motion users do not receive these pointer effects.
 
 ![Updated vehicle panel](car-preview.jpg)
 
 Verified in the desktop browser: both theme icons and surfaces, logo and car loading, Standard/Boda switching, cursor activation, and no horizontal overflow. JavaScript syntax, unique HTML IDs and local asset references pass. Phone-size visual checks remain outstanding.
 
 Car generation used the built-in imagegen tool. Final asset: `assets/car-real.png`. Prompt: “Use case: product-mockup. Website ride-selector asset: a photorealistic elegant silver compact four-door sedan, front three-quarter view, front facing right. Full vehicle including all wheels and mirrors comfortably inside a wide frame, centered with minimal padding. Correct realistic geometry, crisp premium automotive studio photography, soft neutral studio lighting, subtle lime green accent on the side door, no brand badge, no text, no watermark, no scene or ground plane. Genuine transparent background with a subtle soft contact shadow only. Should look like a real everyday passenger taxi car, not a cartoon, not low-poly, not futuristic.”
+
+## Driver section refinement
+
+The oversized arrow is replaced by an original SVG steering wheel with the supplied app logo, subtle wheel movement and an animated route. The cursor uses a blurred shadow without an outlined ring. Desktop visual fit, loaded artwork, shadow activation and no horizontal overflow were verified. Motion respects reduced-motion settings.
+
+![Driver section](driver-preview.jpg)
