@@ -28,3 +28,9 @@ The illustrated phone screens are marketing previews, not live ride data. Ride o
 - Reduced-motion support, visible focus states and script-free content fallback
 
 Google Fonts are optional external requests; system fonts provide fallbacks. All other assets are local, and there are no analytics, API keys or backend dependencies.
+
+## Preview and validation
+
+![Alpha Ride homepage](preview.jpg)
+
+Desktop browser checks verified the rendered hero, ride artwork, passenger/driver switching, arrow-key ride-tab navigation, theme switching, and download-availability dialog. HTML identifiers, anchor targets, ARIA references, local assets, SVG XML, and JavaScript syntax were checked. The responsive layouts and reduced-motion rules are implemented; phone-size visual checks remain to be completed on a device or a viewport-enabled browser.
