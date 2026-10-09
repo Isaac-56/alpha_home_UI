@@ -2,15 +2,7 @@
 
 A responsive, animated one-page website for Alpha Ride and Alpha Plus in Juba. The supplied homepage informed the green branding, app calls to action and 8888 booking flow. Arada Transports informed the app-preview switching, layered phones and motion direction. No Arada assets or code are used. The app logo is supplied by the owner; the car render is generated for this project.
 
-## Run locally
 
-No build step or dependencies are required. From this folder:
-
-```sh
-python -m http.server 8080
-```
-
-Open http://localhost:8080. Any static host can serve this repository with `index.html` as its entry point.
 
 ## Configure downloads
 
