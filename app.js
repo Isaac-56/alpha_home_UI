@@ -72,14 +72,12 @@
   const hero = document.querySelector('.hero');
   const stage = document.querySelector('.showcase-stage');
   const aura = document.querySelector('.cursor-aura');
-  const ring = document.querySelector('.cursor-ring');
   const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)');
   let frame = 0, x = 0, y = 0, trailX = 0, trailY = 0;
   function followPointer() {
     trailX += (x - trailX) * .16;
     trailY += (y - trailY) * .16;
-    ring.style.transform = `translate3d(${trailX}px,${trailY}px,0)`;
-    aura.style.transform = `translate3d(${x}px,${y}px,0)`;
+    aura.style.transform = `translate3d(${trailX}px,${trailY}px,0)`;
     if (Math.abs(x - trailX) + Math.abs(y - trailY) > .2) frame = requestAnimationFrame(followPointer);
     else frame = 0;
   }
